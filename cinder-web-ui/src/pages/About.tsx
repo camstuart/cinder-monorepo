@@ -1,6 +1,7 @@
 import {Heading} from "@radix-ui/themes";
+import {FC} from "react";
 
-const AboutPage: React.FC = () => (
+const AboutPage: FC = () => (
     <>
         <Heading>About Cinder</Heading>
     </>

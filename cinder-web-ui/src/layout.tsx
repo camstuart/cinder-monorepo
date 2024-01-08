@@ -15,6 +15,7 @@ import {Link, Outlet} from "react-router-dom";
 const navigation = [
     { name: 'Home', href: '/', icon: HomeIcon, current: true },
     { name: 'About', href: '/about', icon: UsersIcon, current: false },
+    { name: 'Sign In', href: '/sign-in', icon: UsersIcon, current: false },
 ]
 
 // @ts-expect-error
