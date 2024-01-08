@@ -5,7 +5,6 @@ import './index.css'
 import '@radix-ui/themes/styles.css';
 import { Theme } from '@radix-ui/themes'
 
-
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
       <Theme
@@ -15,6 +14,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
           panelBackground='translucent'
           radius='small'
       >
+
         <App />
       </Theme>
   </React.StrictMode>,

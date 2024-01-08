@@ -1,26 +1,35 @@
-import {useState} from 'react'
-import {Button, Heading, Text} from "@radix-ui/themes";
+// more advanced routing: https://semaphoreci.com/blog/routing-layer-react
+import {
+    createBrowserRouter,
+    RouterProvider,
+} from "react-router-dom"
+
+import Home from "./pages/Home"
+import About from "./pages/About"
 import Layout from "./layout.tsx";
+import Page404 from "./pages/404.tsx";
 
 function App() {
-    const [count, setCount] = useState(0)
+    const router = createBrowserRouter([
+        {
+            element: <Layout />,
+            errorElement: <Page404 />,
+            // child route components
+            children: [
+                {
+                    path: "/",
+                    element: <Home />,
+                },
+                {
+                    path: "/about",
+                    element: <About />,
+                },
+            ],
+        },
+    ])
 
     return (
-
-            <Layout>
-            <div>
-                <a href="/">
-                    <img src='/cinder-logo.svg' width={'200px'} alt="Cinder logo"/>
-                </a>
-            </div>
-            <Heading>Cinder - Fire Awareness</Heading>
-            <div>
-                <Button variant="solid" onClick={() => setCount((count) => count + 1)}>
-                    Count is {count}
-                </Button>
-            </div>
-            <Text>build the fucking app already!</Text>
-            </Layout>
+        <RouterProvider router={router} />
     )
 }
 
