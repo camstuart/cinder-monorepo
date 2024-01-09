@@ -16,7 +16,7 @@ const page = () => {
         };
         checkAuthentication();
 
-        axios.get("https://data.emergency.vic.gov.au/Show?pageId=getIncidentJSON").then((data) => {
+        axios.get("http://localhost:9000/incidents").then((data) => {
             console.log(data);
             setIncidents(data?.data);
             setLoading(false);
